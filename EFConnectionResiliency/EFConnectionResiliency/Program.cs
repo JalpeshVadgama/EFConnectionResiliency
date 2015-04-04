@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EFConnectionResiliency
 {
@@ -10,6 +6,19 @@ namespace EFConnectionResiliency
     {
         static void Main(string[] args)
         {
+            Employee employee = new Employee
+            {
+                FirstName = "Jalpesh",
+                LastName = "Vadgama",
+                Designation = "Project Manager"
+            };
+
+            using (EmployeeContext employeeContext = new EmployeeContext())
+            {
+                employeeContext.Employees.Add(employee);
+                employeeContext.SaveChanges();
+            }
+            Console.WriteLine("Employee Created");
         }
     }
 }
