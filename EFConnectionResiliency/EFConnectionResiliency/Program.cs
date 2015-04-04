@@ -18,6 +18,7 @@ namespace EFConnectionResiliency
                 employeeContext.Employees.Add(employee);
                 employeeContext.SaveChanges();
             }
+
             Console.WriteLine("Employee Created");
         }
     }
